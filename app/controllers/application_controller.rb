@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
   get '/users/home' do
       binding.pry
 
-       @id = User.find(user.id)
+       @user = User.find(user.id)
     erb :'/users/home'
   end
 
