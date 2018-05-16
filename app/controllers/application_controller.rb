@@ -28,7 +28,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/sessions' do
-      binding.pry
       @user = User.new(name: params["name"], email: params["email"], password: params["password"])
       @user.save
       session[:id] = @user.id
