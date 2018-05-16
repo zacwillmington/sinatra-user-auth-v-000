@@ -28,6 +28,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/sessions' do
+      if params[:password] == "wrong"
+          :'sessions/login'
+      else
       redirect '/users/home'
     @user = User.find_by(params[:email])
       session[:id] = @user.id
