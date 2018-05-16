@@ -28,6 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/sessions' do
+      binding.pry
     @user = User.find_by(session[:email])
     #  binding.pry
       session[:id] = @user.id
